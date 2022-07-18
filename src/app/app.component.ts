@@ -7,6 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   count: number = 0;
+  name: string = '';
+  isRed = false;
+  isRedColor = false;
 
   increase(): void {
     this.count++;
