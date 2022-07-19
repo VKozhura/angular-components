@@ -10,7 +10,8 @@ export class AppComponent {
   name: string = '';
   isRed = false;
   isRedColor = false;
-
+  name1 = 'Петр';
+  name2 = 'Tom';
   increase(): void {
     this.count++;
   }
