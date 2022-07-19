@@ -12,6 +12,12 @@ export class AppComponent {
   isRedColor = false;
   name1 = 'Петр';
   name2 = 'Tom';
+  
+  nameCheckbox: string = '';
+
+  name3: string = "Tom";
+  age: number = 24;
+
   increase(): void {
     this.count++;
   }

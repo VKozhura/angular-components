@@ -28,7 +28,7 @@
     class="div-class"
     [style.background-color]="!isRedColor ? 'red' : 'green'"
   ></div>
-  <input type="checkbox" [(ngModel)]="isRedColor" />
+  <input type="checkbox" [(ngModel)]="nameCheckbox" />
 </div>
 
 <child-comp></child-comp>
@@ -37,3 +37,7 @@
 <child-comp
   ><h2>Добро пожаловать, {{ name2 }}!</h2></child-comp
 >
+
+<!-- userName, userAge используем как атрибут для привязки-->
+<child1-comp [userName]="name3" [userAge]="age"></child1-comp> 
+<input type="text" [(ngModel)]="name3" />
