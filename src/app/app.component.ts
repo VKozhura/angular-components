@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { Child6Component } from './child6.component ';
+import { Child6Component } from './child6.component';
 
 @Component({
   selector: 'app-root',
