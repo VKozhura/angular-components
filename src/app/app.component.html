@@ -65,3 +65,8 @@
 
 <h2>Количество кликов: {{clicks}}</h2>
 <child3-comp (onChanged)="onChanged($event)"></child3-comp>
+
+<hr>
+
+<child4-comp [(userName)]="name"></child4-comp>
+<div>Выбранное имя: {{name}}</div>

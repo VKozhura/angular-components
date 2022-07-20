@@ -8,10 +8,11 @@ import { ChildComponent } from './child.component';
 import { Child1Component } from './child1.component ';
 import { Child2Component } from './child2.component ';
 import { Child3Component } from './child3.component ';
+import { Child4Component } from './child4.component ';
 
 
 @NgModule({
-  declarations: [AppComponent, ChildComponent, Child1Component, Child2Component, Child3Component ],
+  declarations: [AppComponent, ChildComponent, Child1Component, Child2Component, Child3Component, Child4Component ],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

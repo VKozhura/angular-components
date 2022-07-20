@@ -12,7 +12,6 @@ export class Child3Component {
   @Output () onChanged = new EventEmitter<boolean>();
   
   change(increased:any) {
-    debugger;
     this.onChanged.emit(increased);
 }
 }

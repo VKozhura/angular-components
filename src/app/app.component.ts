@@ -23,7 +23,6 @@ export class AppComponent {
 
   clicks: number = 0;
   onChanged(increased: any) {
-    debugger
     increased === true ? this.clicks++ : this.clicks--;
   }
 
