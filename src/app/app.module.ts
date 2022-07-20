@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { ButtonComponent } from './button/button.component';
 import { ChildComponent } from './child.component';
 import { Child1Component } from './child1.component ';
+import { Child2Component } from './child2.component ';
 
 
 @NgModule({
-  declarations: [AppComponent, ChildComponent, Child1Component],
+  declarations: [AppComponent, ChildComponent, Child1Component, Child2Component ],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

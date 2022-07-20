@@ -18,6 +18,9 @@ export class AppComponent {
   name3: string = "Tom";
   age: number = 24;
 
+  name4: string = "Tom";
+  age2: number = 24;
+
   increase(): void {
     this.count++;
   }
