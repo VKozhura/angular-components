@@ -70,3 +70,17 @@
 
 <child4-comp [(userName)]="name"></child4-comp>
 <div>Выбранное имя: {{name}}</div>
+
+<hr>
+
+<!-- переменную мы можем использовать только внутри шаблона -->
+<p #userName>{{name5}}</p>
+<p>{{userName.textContent}}</p>
+<input type="text" [(ngModel)]="name5" />
+
+<hr>
+
+<!-- еременная counter, определенная внутри тега <child-comp>, поэтому она будет представлять компонент Child5Component. -->
+<child5-comp #counter></child5-comp>
+<button (click)="counter.increment()">+</button>
+<button (click)="counter.decrement()">-</button>

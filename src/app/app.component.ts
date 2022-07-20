@@ -21,6 +21,8 @@ export class AppComponent {
   name4: string = "Tom";
   age2: number = 24;
 
+  name5: string = 'Варя'
+
   clicks: number = 0;
   onChanged(increased: any) {
     increased === true ? this.clicks++ : this.clicks--;
