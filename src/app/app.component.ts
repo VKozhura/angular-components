@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Child6Component } from './child6.component ';
 
 @Component({
@@ -39,4 +39,15 @@ export class AppComponent {
       
     increment() { this.counterComponent?.increment(); }
     decrement() { this.counterComponent?.decrement(); }
+
+  //==========================
+  @ViewChild('nameText', { static: false })
+  nameParagraph: ElementRef | undefined;
+  name6: string = 'Саша';
+  change() {
+    if (this.nameParagraph !== undefined) {
+      console.log(this.nameParagraph.nativeElement.textContent);
+      this.nameParagraph.nativeElement.textContent = "hell";
+    }
+  }
 }
