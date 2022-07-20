@@ -1,10 +1,14 @@
 <h1>Hello Angular</h1>
 <p>Angular 14 представляет модульную архитектуру приложения</p>
 
+<hr>
+
 <div class="block">
   <p>Количество кликов {{ count }}</p>
   <button (click)="increase()">Click</button>
 </div>
+
+<hr>
 
 <div class="block">
   <p>Привет, {{ name }}</p>
@@ -12,12 +16,16 @@
   <input type="text" [(ngModel)]="name" />
 </div>
 
+<hr>
+
 <div class="block">
   <!-- true - класс применяется, false - не применяется -->
   <div class="div-class" [class.isredbox]="isRed"></div>
   <div class="div-class" [class.isredbox]="!isRed"></div>
   <input type="checkbox" [(ngModel)]="isRed" />
 </div>
+
+<hr>
 
 <div class="block">
   <div
@@ -31,17 +39,29 @@
   <input type="checkbox" [(ngModel)]="isRedColor" />
 </div>
 
+<hr>
+
 <child-comp></child-comp>
 <p>Привет, {{ name1 }}</p>
+
+<hr>
 
 <child-comp
   ><h2>Добро пожаловать, {{ name2 }}!</h2></child-comp
 >
 
+<hr>
+
 <!-- userName, userAge используем как атрибут для привязки-->
 <child1-comp [userName]="name3" [userAge]="age"></child1-comp> 
 <input type="text" [(ngModel)]="name3" />
 
+<hr>
 
 <child2-comp [userName2]="name4" [userAge]="age2"></child2-comp> 
 <input type="number" [(ngModel)]="age2" />
+
+<hr>
+
+<h2>Количество кликов: {{clicks}}</h2>
+<child3-comp (onChanged)="onChanged($event)"></child3-comp>

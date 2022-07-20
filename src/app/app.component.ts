@@ -21,6 +21,12 @@ export class AppComponent {
   name4: string = "Tom";
   age2: number = 24;
 
+  clicks: number = 0;
+  onChanged(increased: any) {
+    debugger
+    increased === true ? this.clicks++ : this.clicks--;
+  }
+
   increase(): void {
     this.count++;
   }
