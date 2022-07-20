@@ -28,7 +28,7 @@
     class="div-class"
     [style.background-color]="!isRedColor ? 'red' : 'green'"
   ></div>
-  <input type="checkbox" [(ngModel)]="nameCheckbox" />
+  <input type="checkbox" [(ngModel)]="isRedColor" />
 </div>
 
 <child-comp></child-comp>
@@ -43,5 +43,5 @@
 <input type="text" [(ngModel)]="name3" />
 
 
-<child2-comp [userName2]="name4" [userAge2]="age2"></child2-comp> 
+<child2-comp [userName2]="name4" [userAge]="age2"></child2-comp> 
 <input type="number" [(ngModel)]="age2" />
