@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { Child6Component } from './child6.component ';
 
 @Component({
   selector: 'app-root',
@@ -31,4 +32,11 @@ export class AppComponent {
   increase(): void {
     this.count++;
   }
+
+  // ===============
+  @ViewChild(Child6Component, { static: false })
+    private counterComponent: Child6Component | undefined;
+      
+    increment() { this.counterComponent?.increment(); }
+    decrement() { this.counterComponent?.decrement(); }
 }
