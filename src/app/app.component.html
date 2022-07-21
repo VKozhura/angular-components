@@ -3,6 +3,32 @@
 
 <hr>
 
+<div [ngClass]="{ verdanaFont: true }">
+  <h1>Hello Angular</h1>
+  <p [ngClass]="{ segoePrintFont: true }">Angular 14 представляет модульную архитектуру приложения</p>
+</div>
+
+<hr>
+
+<div [ngClass]="currentClasses">
+  <h1>Hello Angular</h1>
+  <p >Angular 14 представляет модульную архитектуру приложения</p>
+</div>
+
+<hr>
+
+
+<!-- [style.display] = "visibility ? 'block' : 'none'" -->
+<div [ngClass]="{ invisible: visibility }">
+  <h1>Hello Angular 14</h1>
+  <p>
+      Angular 14 представляет модульную архитектуру приложения
+  </p>
+</div>
+<button (click)="toggle()">Toggle</button>
+
+<hr>
+
 <div class="block">
   <p>Количество кликов {{ count }}</p>
   <button (click)="increase()">Click</button>

@@ -50,4 +50,22 @@ export class AppComponent {
       this.nameParagraph.nativeElement.textContent = "hell";
     }
   }
+
+  //================
+
+  isVerdana = true;
+  isNavy = true;
+ 
+  currentClasses = {
+    verdanaFont: this.isVerdana,
+    navyColor: this.isNavy
+  }
+
+  //==================
+
+  visibility: boolean = false;
+
+  toggle() {
+    this.visibility = !this.visibility
+  }
 }
