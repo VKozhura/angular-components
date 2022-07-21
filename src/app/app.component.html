@@ -135,3 +135,37 @@
   <h1>AppModule</h1>
   <app-button></app-button>
 </div>
+
+<hr>
+
+<p *ngIf="condition">
+  Привет мир
+</p>
+<p *ngIf="!condition">
+  Пока мир
+</p>
+<button (click)="toggle1()">Toggle</button>
+
+<hr>
+
+<p *ngIf="condition; else unset">
+  Привет мир
+</p>
+<ng-template #unset>  
+  <p>Пока мир</p>  
+</ng-template>   
+<button (click)="toggle1()">Toggle</button>
+
+<hr>
+
+<ul>
+  <li *ngFor="let item of items; let i = index">{{i+1}}.{{item}}</li>
+</ul>
+
+<hr>
+
+<div [ngSwitch]="count1">
+  <ng-template ngSwitchCase="1">{{count1 * 10}}</ng-template>
+  <ng-template ngSwitchCase="2">{{count1 * 100}}</ng-template>
+  <ng-template ngSwitchDefault>{{count1 * 1000}}</ng-template>
+</div>

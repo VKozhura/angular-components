@@ -68,4 +68,19 @@ export class AppComponent {
   toggle() {
     this.visibility = !this.visibility
   }
+
+  //============
+
+  condition: boolean = true;
+     
+    toggle1(){
+        this.condition = !this.condition;
+    }
+
+  //===========
+
+  items = ["Tom", "Bob", "Sam", "Bill"]
+
+  //=============
+  count1: number = 5;
 }
