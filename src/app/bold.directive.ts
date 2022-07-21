@@ -1,11 +1,11 @@
-import { Directive, ElementRef, Renderer2, HostListener, HostBinding} from "@angular/core";
+import { Directive, ElementRef, Renderer2, HostListener, HostBinding, Input} from "@angular/core";
 
 @Directive({
     selector: '[bold]', // селектор для атрибута ([bold])
-    host: {
-        '(mouseenter)': 'onMouseEnter()',
-        '(mouseleave)': 'onMouseLeave()'
-    }
+    // host: {
+    //     '(mouseenter)': 'onMouseEnter()',
+    //     '(mouseleave)': 'onMouseLeave()'
+    // }
 })
 export class BoldDirective {
     // constructor( private elementRef: ElementRef) { 
@@ -57,18 +57,51 @@ export class BoldDirective {
 
     //==========================
 
-    constructor(private element: ElementRef, private renderer: Renderer2){
-        this.renderer.setStyle(this.element.nativeElement, "cursor", "pointer");
+    // constructor(private element: ElementRef, private renderer: Renderer2){
+    //     this.renderer.setStyle(this.element.nativeElement, "cursor", "pointer");
+    // }
+     
+    // onMouseEnter(){
+    //     this.setFontWeight("bold");
+    // }
+    // onMouseLeave(){
+    //     this.setFontWeight("normal");
+    // }
+
+    // private setFontWeight(val: string) {
+    //     this.renderer.setStyle(this.element.nativeElement, "font-weight", val);
+    // }
+
+    //===========================
+    @Input() selectedSize = "18px";
+    @Input() defaultSize = "16px";
+      
+    private fontSize : string;
+    private fontWeight = "normal";
+    
+    constructor(){
+        this.fontSize = this.defaultSize;
     }
      
-    onMouseEnter(){
-        this.setFontWeight("bold");
+    @HostBinding("style.fontSize") get getFontSize(){
+        return this.fontSize;
     }
-    onMouseLeave(){
-        this.setFontWeight("normal");
+     
+    @HostBinding("style.fontWeight") get getFontWeight(){
+        return this.fontWeight;
     }
-    
-    private setFontWeight(val: string) {
-        this.renderer.setStyle(this.element.nativeElement, "font-weight", val);
+     
+    @HostBinding("style.cursor") get getCursor(){
+        return "pointer";
+    }
+     
+    @HostListener("mouseenter") onMouseEnter() {
+        this.fontWeight ="bold";
+        this.fontSize = this.selectedSize;
+    }
+ 
+    @HostListener("mouseleave") onMouseLeave() {
+        this.fontWeight = "normal";
+        this.fontSize = this.defaultSize;
     }
 }
