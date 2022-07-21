@@ -83,4 +83,8 @@ export class AppComponent {
 
   //=============
   count1: number = 5;
+
+  qweparent() {
+    console.log('afsdfasdfasdf')
+  }
 }
