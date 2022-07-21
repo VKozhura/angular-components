@@ -13,10 +13,11 @@ import { Child4Component } from './child4.component';
 import { Child5Component } from './child5.component';
 import { Child6Component } from './child6.component';
 import { Child7Component } from './child7.component';
+import { BoldDirective } from './bold.directive';
 
 
 @NgModule({
-  declarations: [AppComponent, ChildComponent, Child1Component, Child2Component, Child3Component, Child4Component, Child5Component, Child6Component, Child7Component ],
+  declarations: [AppComponent, ChildComponent, Child1Component, Child2Component, Child3Component, Child4Component, Child5Component, Child6Component, Child7Component, BoldDirective ],
   imports: [BrowserModule, FormsModule, ButtonModule],
   providers: [],
   bootstrap: [AppComponent],
