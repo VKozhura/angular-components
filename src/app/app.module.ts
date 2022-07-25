@@ -18,10 +18,11 @@ import { DataComponent } from './data.component';
 
 import { DataService } from './data.service';
 import { LogService } from './log.service';
+import { FormComponent } from './form.component';
 
 
 @NgModule({
-  declarations: [AppComponent, DataComponent, ChildComponent, Child1Component, Child2Component, Child3Component, Child4Component, Child5Component, Child6Component, Child7Component, BoldDirective ],
+  declarations: [AppComponent, FormComponent, DataComponent, ChildComponent, Child1Component, Child2Component, Child3Component, Child4Component, Child5Component, Child6Component, Child7Component, BoldDirective ],
   imports: [BrowserModule, FormsModule, ButtonModule],
   providers: [DataService, LogService],
   bootstrap: [AppComponent],
