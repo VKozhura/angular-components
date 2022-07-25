@@ -14,12 +14,16 @@ import { Child5Component } from './child5.component';
 import { Child6Component } from './child6.component';
 import { Child7Component } from './child7.component';
 import { BoldDirective } from './bold.directive';
+import { DataComponent } from './data.component';
+
+import { DataService } from './data.service';
+import { LogService } from './log.service';
 
 
 @NgModule({
-  declarations: [AppComponent, ChildComponent, Child1Component, Child2Component, Child3Component, Child4Component, Child5Component, Child6Component, Child7Component, BoldDirective ],
+  declarations: [AppComponent, DataComponent, ChildComponent, Child1Component, Child2Component, Child3Component, Child4Component, Child5Component, Child6Component, Child7Component, BoldDirective ],
   imports: [BrowserModule, FormsModule, ButtonModule],
-  providers: [],
+  providers: [DataService, LogService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

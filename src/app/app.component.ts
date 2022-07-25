@@ -7,7 +7,7 @@ import { LogService } from './log.service';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [DataService, LogService]
+  // providers: [DataService, LogService]
 })
 export class AppComponent {
   count: number = 0;
@@ -93,16 +93,16 @@ export class AppComponent {
 
   //==== Сервис
 
-  items1: string[] = [];
-  modelName: string = '';
+//   items1: string[] = [];
+//   modelName: string = '';
 
-  constructor(private dataService: DataService) {}
+//   constructor(private dataService: DataService) {}
 
-  addItem(name: string) {
-    this.dataService.addData(name)
-  }
+//   addItem(name: string) {
+//     this.dataService.addData(name)
+//   }
 
-  ngOnInit() {
-    this.items1 = this.dataService.getData();
-  }
+//   ngOnInit() {
+//     this.items1 = this.dataService.getData();
+//   }
 }
