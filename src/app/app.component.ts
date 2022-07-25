@@ -1,10 +1,12 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Child6Component } from './child6.component';
+import { DataService } from './data.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  providers: [DataService]
 })
 export class AppComponent {
   count: number = 0;
@@ -86,5 +88,20 @@ export class AppComponent {
 
   qweparent() {
     console.log('afsdfasdfasdf')
+  }
+
+  //==== Сервис
+
+  items1: string[] = [];
+  modelName: string = '';
+
+  constructor(private dataService: DataService) {}
+
+  addItem(name: string) {
+    this.dataService.addData(name)
+  }
+
+  ngOnInit() {
+    this.items1 = this.dataService.getData();
   }
 }
