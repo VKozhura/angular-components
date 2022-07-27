@@ -18,6 +18,7 @@ import { DataComponent } from './data.component';
 import { FormComponent } from './form.component';
 import { UserComponent } from './user.component';
 import { Form1Component } from './form1.component';
+import { TaskComponent } from './task01/task.component';
 
 import { DataService } from './data.service';
 import { LogService } from './log.service';
@@ -25,7 +26,7 @@ import { LogService } from './log.service';
 
 
 @NgModule({
-  declarations: [AppComponent, UserComponent, FormComponent, Form1Component, DataComponent, ChildComponent, Child1Component, Child2Component, Child3Component, Child4Component, Child5Component, Child6Component, Child7Component, BoldDirective ],
+  declarations: [TaskComponent, AppComponent, UserComponent, FormComponent, Form1Component, DataComponent, ChildComponent, Child1Component, Child2Component, Child3Component, Child4Component, Child5Component, Child6Component, Child7Component, BoldDirective ],
   imports: [BrowserModule, FormsModule, ButtonModule],
   providers: [DataService, LogService],
   bootstrap: [AppComponent],
