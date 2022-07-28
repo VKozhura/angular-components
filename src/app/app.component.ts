@@ -1,7 +1,18 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Child6Component } from './child6.component';
+
 import { DataService } from './data.service';
 import { LogService } from './log.service';
+
+
+export class User {
+  userName: string;
+  
+  constructor( userName: string, public userEmail: string, public userBirthdate: string, public userTaxId: number ) {
+    this.userName = userName;
+  }
+}
 
 @Component({
   selector: 'app-root',
@@ -105,4 +116,29 @@ export class AppComponent {
 //   ngOnInit() {
 //     this.items1 = this.dataService.getData();
 //   }
+
+  myForm: FormGroup;
+  constructor() {
+    this.myForm = new FormGroup({
+      "userName": new FormControl(''),
+      "userEmail": new FormControl(''),
+      "userBirthdate": new FormControl(''),
+      "userTaxId": new FormControl(0, Validators.pattern('[0-9]{12}'))
+    })
+  }
+
+  users: User[] = []
+
+  addUser() {
+        this.users = [...this.users, new User(this.myForm.value.userName, this.myForm.value.userEmail, this.myForm.value.userBirthdate, this.myForm.value.userTaxId)]
+        console.log(this.myForm);
+        this.myForm.reset()
+        console.log(this.users)
+  }
+
+  deleteRow(index: number) {
+        this.users.splice(index, 1)
+        console.log(this.users);
+  }
+
 }

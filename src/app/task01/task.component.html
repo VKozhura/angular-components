@@ -4,8 +4,8 @@
         <input type="text" [(ngModel)] = "userName">
     </div>
     <div>
-        <label for="">Email</label>
-        <input type="text" [(ngModel)] = "email">
+        <mat-label>Email</mat-label>
+        <input type="email" [(ngModel)] = "email">
     </div>
     <div>
         <label for="">Дата рождения</label>
@@ -15,8 +15,9 @@
         <label for="">ИНН</label>
         <input type="number">
     </div>
-    <button (click)="addUser()">Добавить</button>
+    <button type="button" mat-button (click)="addUser()">Добавить</button>
 </div>
+<h2>Список добавленнных пользователей:</h2>
 <table>
     <thead>
         <tr>
