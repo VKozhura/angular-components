@@ -8,9 +8,15 @@ import { LogService } from './log.service';
 
 export class User {
   userName: string;
+  userEmail: string;
+  userBirthdate: string;
+  userTaxId: number;
   
-  constructor( userName: string, public userEmail: string, public userBirthdate: string, public userTaxId: number ) {
+  constructor( userName: string, userEmail: string, userBirthdate: string, userTaxId: number ) {
     this.userName = userName;
+    this.userEmail = userEmail;
+    this.userBirthdate = userBirthdate;
+    this.userTaxId = userTaxId;
   }
 }
 
@@ -120,10 +126,10 @@ export class AppComponent {
   myForm: FormGroup;
   constructor() {
     this.myForm = new FormGroup({
-      "userName": new FormControl(''),
-      "userEmail": new FormControl(''),
-      "userBirthdate": new FormControl(''),
-      "userTaxId": new FormControl(0, Validators.pattern('[0-9]{12}'))
+      userName: new FormControl(''),
+      userEmail: new FormControl(''),
+      userBirthdate: new FormControl(''),
+      userTaxId: new FormControl(0, Validators.pattern('[0-9]{12}'))
     })
   }
 
@@ -139,6 +145,21 @@ export class AppComponent {
   deleteRow(index: number) {
         this.users.splice(index, 1)
         console.log(this.users);
+  }
+
+  editRow(index: number) {
+    const userToEdit = this.users[index]
+
+    this.myForm.patchValue({
+      userName: userToEdit.userName,
+      userEmail: userToEdit.userEmail,
+      userBirthdate: userToEdit.userBirthdate,
+      userTaxId: userToEdit.userTaxId,
+
+  })
+   
+    this.deleteRow(index);
+    
   }
 
 }

@@ -1,12 +1,12 @@
 <form [formGroup]="myForm" novalidate (ngSubmit)="addUser()">
-  <div>
-    <label>Имя</label>
-    <input type="text" formControlName = "userName">
-  </div>
-  <div>
+  <mat-form-field appearance="outline">
+    <mat-label>Имя</mat-label>
+    <input matInput placeholder="Иван" type="text" formControlName = "userName">
+  </mat-form-field>
+  <mat-form-field appearance="outline">
     <mat-label>Email</mat-label>
-    <input type="text" formControlName = "userEmail">
-  </div>
+    <input matInput type="text" formControlName = "userEmail">
+  </mat-form-field>
   <div>
     <label for="">Дата рождения</label>
     <input type="date" formControlName = "userBirthdate">
@@ -35,7 +35,8 @@
           <td >{{user.userEmail}}</td>
           <td >{{user.userBirthdate}}</td>
           <td >{{user.userTaxId}}</td>
-          <button (click)="deleteRow(i)">удалить</button>
+          <button (click)="deleteRow(i)">Удалить</button>
+          <button (click)="editRow(i)">Редактировать</button>
       </tr>
   </tbody>
 </table>
