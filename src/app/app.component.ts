@@ -5,14 +5,18 @@ import { Child6Component } from './child6.component';
 import { DataService } from './data.service';
 import { LogService } from './log.service';
 
-
 export class User {
   userName: string;
   userEmail: string;
   userBirthdate: string;
   userTaxId: number;
-  
-  constructor( userName: string, userEmail: string, userBirthdate: string, userTaxId: number ) {
+
+  constructor(
+    userName: string,
+    userEmail: string,
+    userBirthdate: string,
+    userTaxId: number
+  ) {
     this.userName = userName;
     this.userEmail = userEmail;
     this.userBirthdate = userBirthdate;
@@ -33,16 +37,16 @@ export class AppComponent {
   isRedColor = false;
   name1 = 'Петр';
   name2 = 'Tom';
-  
+
   nameCheckbox: string = '';
 
-  name3: string = "Tom";
+  name3: string = 'Tom';
   age: number = 24;
 
-  name4: string = "Tom";
+  name4: string = 'Tom';
   age2: number = 24;
 
-  name5: string = 'Варя'
+  name5: string = 'Варя';
 
   clicks: number = 0;
   onChanged(increased: any) {
@@ -55,10 +59,14 @@ export class AppComponent {
 
   // ===============
   @ViewChild(Child6Component, { static: false })
-    private counterComponent: Child6Component | undefined;
-      
-    increment() { this.counterComponent?.increment(); }
-    decrement() { this.counterComponent?.decrement(); }
+  private counterComponent: Child6Component | undefined;
+
+  increment() {
+    this.counterComponent?.increment();
+  }
+  decrement() {
+    this.counterComponent?.decrement();
+  }
 
   //==========================
   @ViewChild('nameText', { static: false })
@@ -67,7 +75,7 @@ export class AppComponent {
   change() {
     if (this.nameParagraph !== undefined) {
       console.log(this.nameParagraph.nativeElement.textContent);
-      this.nameParagraph.nativeElement.textContent = "hell";
+      this.nameParagraph.nativeElement.textContent = 'hell';
     }
   }
 
@@ -75,53 +83,53 @@ export class AppComponent {
 
   isVerdana = true;
   isNavy = true;
- 
+
   currentClasses = {
     verdanaFont: this.isVerdana,
-    navyColor: this.isNavy
-  }
+    navyColor: this.isNavy,
+  };
 
   //==================
 
   visibility: boolean = false;
 
   toggle() {
-    this.visibility = !this.visibility
+    this.visibility = !this.visibility;
   }
 
   //============
 
   condition: boolean = true;
-     
-    toggle1(){
-        this.condition = !this.condition;
-    }
+
+  toggle1() {
+    this.condition = !this.condition;
+  }
 
   //===========
 
-  items = ["Tom", "Bob", "Sam", "Bill"]
+  items = ['Tom', 'Bob', 'Sam', 'Bill'];
 
   //=============
   count1: number = 5;
 
   qweparent() {
-    console.log('afsdfasdfasdf')
+    console.log('afsdfasdfasdf');
   }
 
   //==== Сервис
 
-//   items1: string[] = [];
-//   modelName: string = '';
+  //   items1: string[] = [];
+  //   modelName: string = '';
 
-//   constructor(private dataService: DataService) {}
+  //   constructor(private dataService: DataService) {}
 
-//   addItem(name: string) {
-//     this.dataService.addData(name)
-//   }
+  //   addItem(name: string) {
+  //     this.dataService.addData(name)
+  //   }
 
-//   ngOnInit() {
-//     this.items1 = this.dataService.getData();
-//   }
+  //   ngOnInit() {
+  //     this.items1 = this.dataService.getData();
+  //   }
 
   myForm: FormGroup;
   constructor() {
@@ -129,37 +137,42 @@ export class AppComponent {
       userName: new FormControl(''),
       userEmail: new FormControl(''),
       userBirthdate: new FormControl(''),
-      userTaxId: new FormControl(0, Validators.pattern('[0-9]{12}'))
-    })
+      userTaxId: new FormControl('', Validators.pattern('[0-9]{12}')),
+    });
   }
 
-  users: User[] = []
+  users: User[] = [];
 
   addUser() {
-        this.users = [...this.users, new User(this.myForm.value.userName, this.myForm.value.userEmail, this.myForm.value.userBirthdate, this.myForm.value.userTaxId)]
-        console.log(this.myForm);
-        this.myForm.reset()
-        console.log(this.users)
+    this.users = [
+      ...this.users,
+      new User(
+        this.myForm.value.userName,
+        this.myForm.value.userEmail,
+        this.myForm.value.userBirthdate,
+        this.myForm.value.userTaxId
+      ),
+    ];
+    console.log(this.myForm);
+    this.myForm.reset();
+    console.log(this.users);
   }
 
   deleteRow(index: number) {
-        this.users.splice(index, 1)
-        console.log(this.users);
+    this.users.splice(index, 1);
+    console.log(this.users);
   }
 
   editRow(index: number) {
-    const userToEdit = this.users[index]
+    const userToEdit = this.users[index];
 
     this.myForm.patchValue({
       userName: userToEdit.userName,
       userEmail: userToEdit.userEmail,
       userBirthdate: userToEdit.userBirthdate,
       userTaxId: userToEdit.userTaxId,
+    });
 
-  })
-   
     this.deleteRow(index);
-    
   }
-
 }

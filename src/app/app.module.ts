@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { ButtonModule } from './button/button.module';
 
@@ -25,14 +25,43 @@ import { LogService } from './log.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from '@angular/material/button';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
-
-
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
-  declarations: [TaskComponent, AppComponent, UserComponent, FormComponent, Form1Component, DataComponent, ChildComponent, Child1Component, Child2Component, Child3Component, Child4Component, Child5Component, Child6Component, Child7Component, BoldDirective ],
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule, ButtonModule, BrowserAnimationsModule, MatButtonModule, MatInputModule, MatFormFieldModule ],
+  declarations: [
+    TaskComponent,
+    AppComponent,
+    UserComponent,
+    FormComponent,
+    Form1Component,
+    DataComponent,
+    ChildComponent,
+    Child1Component,
+    Child2Component,
+    Child3Component,
+    Child4Component,
+    Child5Component,
+    Child6Component,
+    Child7Component,
+    BoldDirective,
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ButtonModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatTableModule,
+    MatIconModule,
+  ],
   providers: [DataService, LogService],
   bootstrap: [AppComponent],
 })

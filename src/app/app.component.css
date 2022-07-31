@@ -6,6 +6,7 @@
 h1,
 h2 {
   color: navy;
+  text-align: center;
 }
 
 p {
@@ -25,20 +26,27 @@ p {
   background-color: red;
 }
 
-.verdanaFont { 
-  font-size:13px; 
-  font-family:Verdana; 
+.verdanaFont {
+  font-size: 13px;
+  font-family: Verdana;
 }
 
 .segoePrintFont {
-  font-size:14px; 
-  font-family:"Segoe Print";
+  font-size: 14px;
+  font-family: "Segoe Print";
 }
 
-.navyColor { 
-  color:navy;
+.navyColor {
+  color: navy;
 }
 
 .invisible {
   display: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  margin: 20px auto;
 }
