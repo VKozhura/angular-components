@@ -4,17 +4,19 @@ import { User } from "./user"
 
 @Component({
     selector: 'userFetch-comp',
-    template: `<div>
-        <p>Имя пользователя: {{user?.name}}</p>
-        <p>Возраст пользователя: {{user?.age}}</p>
-    </div>`,
+    template: `<ul>
+        <li *ngFor="let user of users">
+            <p>Имя пользователя: {{user?.name}}</p>
+            <p>Возраст пользователя: {{user?.age}}</p>
+        </li>
+    </ul>`,
     providers: [HttpService]
 })
 export class UserFetchComponent implements OnInit {
-    user: User | undefined;
+    users: User[] = [];
     constructor(private http: HttpService) {}
     
     ngOnInit(){
-        this.http.getData().subscribe((data:any) => this.user = new User(data.name, data.age));
+        this.http.getData().subscribe((data:any) => this.users = data['userList']);
     }
 }
