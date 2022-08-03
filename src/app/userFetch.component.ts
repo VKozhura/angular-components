@@ -4,7 +4,8 @@ import { User } from "./user"
 
 @Component({
     selector: 'userFetch-comp',
-    template: `<ul>
+    template: `<div>{{this.httpService.errorMessage}}</div>
+    <ul>
         <li *ngFor="let user of users">
             <p>Имя пользователя: {{user?.name}}</p>
             <p>Возраст пользователя: {{user?.age}}</p>
@@ -14,9 +15,13 @@ import { User } from "./user"
 })
 export class UserFetchComponent implements OnInit {
     users: User[] = [];
-    constructor(private http: HttpService) {}
+    error: any;
+    httpService: HttpService;
+    constructor( httpService: HttpService) {
+        this.httpService = httpService
+    }
     
     ngOnInit(){
-        this.http.getUsers().subscribe((data:any) => this.users = data);
+        this.httpService.getUsers().subscribe(data => this.users = data);
     }
 }
