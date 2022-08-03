@@ -17,6 +17,6 @@ export class UserFetchComponent implements OnInit {
     constructor(private http: HttpService) {}
     
     ngOnInit(){
-        this.http.getData().subscribe((data:any) => this.users = data['userList']);
+        this.http.getUsers().subscribe((data:any) => this.users = data);
     }
 }
