@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { ButtonModule } from './button/button.module';
 
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { FormComponent } from './form.component';
 import { UserComponent } from './user.component';
 import { Form1Component } from './form1.component';
 import { TaskComponent } from './task01/task.component';
+import { UserFetchComponent } from './userFetch.component';
 
 import { DataService } from './data.service';
 import { LogService } from './log.service';
@@ -48,7 +50,9 @@ import { MatIconModule } from '@angular/material/icon';
     Child6Component,
     Child7Component,
     BoldDirective,
+    UserFetchComponent
   ],
+
   imports: [
     BrowserModule,
     FormsModule,
@@ -61,6 +65,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
     MatTableModule,
     MatIconModule,
+    HttpClientModule,
   ],
   providers: [DataService, LogService],
   bootstrap: [AppComponent],
